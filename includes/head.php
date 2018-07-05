@@ -11,6 +11,10 @@
    	select{
    		margin-top: 5px;
    	}
+
+   	#resultado{
+   		margin-bottom: 10px;
+   	}
    </style>
 
    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
@@ -25,6 +29,15 @@
 	  	$("#com").remove();
 	  	
 	  }
+
+	  
+	  $(document).ready(function () {
+		    $("#pasa").keyup(function () {
+		        var value = $(this).val();
+		        $("#texto").val(value);
+		    });
+		});
 	</script>
+	<script type="text/javascript" src="js/fquery.js"></script>
 </head>
 <body>
