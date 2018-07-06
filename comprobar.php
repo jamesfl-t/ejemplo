@@ -1,25 +1,19 @@
 <?php
-      $user = $_POST['b'];
-       
-      if(!empty($user)) {
-            comprobar($user);
-      }
-       
-      function comprobar($b) {
-            $con = mysql_connect('localhost','root', '');
-            mysql_select_db('pruebas', $con);
-       
-            $sql = mysql_query("SELECT * FROM usuarios WHERE clave = '".$b."'",$con);
-             
-            $contar = mysql_num_rows($sql);
-             
-            if($contar == 0){
-                 
+$res = array('respuesta' => false);
+$clave = $_POST['valor'];
 
-            }else{
+//echo"tu clave ".$clave;
 
-                  
-                  
-            }
-      }     
+$sql = new MySQLi('localhost','root', '', 'pruebas');
+$q = "SELECT * FROM usuarios WHERE clave = '".$clave."'";
+$con = $sql->Query($q);
+$contar = $con->num_rows;    
+
+if ($contar > 0) {
+   $info = $con->fetch_object();
+
+   $res = array('respuesta' => true, 'info' => $info);
+
+}
+print_r(json_encode($res));
 ?>
