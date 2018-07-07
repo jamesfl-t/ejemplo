@@ -15,11 +15,18 @@
    #resultado{
       margin-bottom: 10px;
    }
+
+   #usuario{
+      margin-top: 10px;
+      border:1px solid #C5C8CC;
+      border-radius: 15px;
+
+   }
 </style>
 
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
-
+//funciones clonar y remover elementos
    function clonar(){
       $( "#com" ).clone().appendTo( "#lista" );
    }
@@ -27,7 +34,7 @@
       $("#com").remove();
    }
 
-
+//funcion copiar texto en textarea
    $(document).ready(function () {
       $("#pasa").keyup(function () {
          var value = $(this).val();
