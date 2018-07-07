@@ -22,6 +22,10 @@
       border-radius: 15px;
 
    }
+
+   #etiqueta{
+      margin-top: 10px;
+   }
 </style>
 
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
@@ -41,6 +45,8 @@
          $("#texto").val(value);
       });
    });
+
+   
 </script>
 </head>
 <body>
